@@ -1,0 +1,30 @@
+﻿@model Turnos.Models.Especialidad
+    
+
+
+
+<h4> Seguro que desea eliminar el registro? </h4>
+
+
+<div class="row" asp-action="Delete">
+    <div class="col s12 m6">
+        <div class="card deep-purple darken-1 hoverable">
+            <div class="card-content white-text">
+                <span class="card-title"><h5><b></b>@Html.DisplayFor(model => model.Descripcion)</b></h5></span>
+                               
+            </div>
+
+            <div class="card-action deep-purple darken-3">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="IdEspecialidad" />
+                    <input type="submit" class="waves-effect waves-light btn-small  red lighten-2 " value="ELIMINAR" />
+                    <a class="white-text right" asp-action="Index"><b>VOLVER </b></a>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

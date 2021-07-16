@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Turnos.Models.Especialidad>
+
+<p>
+    <a asp-action="Create" class="btn-floating btn-large green darken-3"><i class="material-icons">fact_check</i> </a>
+</p>
+
+<table class="responsive-table z-depth-4 highlight deep-purple lighten-5">
+    <thead class="deep-purple accent-3 white-text">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                <br />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @*aca colocaremos el codigo para mostrar los registros de la DB*@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>  <!-- POR PROBLEMAS DE COMPATIBILIDAD PREFIERO QUE NO SE PUEDAN ELIMINAR ESPECIALIDADES. SOLO SE EDITAN.  -->
+                   <!-- <a asp-action="Delete" asp-route-id="@item.IdEspecialidad" class="right"><i class="material-icons red-text">delete</i></a><-->
+                    <a asp-action="Edit" asp-route-id="@item.IdEspecialidad" class="right"><i class="material-icons">edit</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

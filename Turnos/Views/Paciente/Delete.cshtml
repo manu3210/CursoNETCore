@@ -1,0 +1,39 @@
+﻿@model Turnos.Models.Paciente
+
+<h3> Seguro que desea eliminar el paciente? </h3>
+
+<div class="row" asp-action="Delete">
+    <div class="col s12 m6">
+        <div class="card green darken-1 hoverable">
+            <div class="card-content white-text">
+                <span class="card-title"><h5><b></b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)</b></b></h5></span>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)
+                </dt>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)
+                </dt>
+                <hr />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+                </dt>
+                
+
+            </div>
+
+            <div class="card-action green darken-3">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="IdPaciente" />
+                    <input type="submit" class="waves-effect waves-light btn-small  red lighten-2 " value="ELIMINAR" />
+                    <a class="white-text right" asp-action="Index"><b>VOLVER </b></a>
+                </form>
+            </div>
+
+            
+        </div>
+        
+    </div>
+    
+</div> 
